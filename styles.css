@@ -1,0 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+nav {
+  display: flex;
+  -webkit-box-shadow: 5px 1px 22px -3px rgba(0, 0, 0, 0.49);
+  box-shadow: 5px 1px 22px -3px rgba(0, 0, 0, 0.49);
+}
+
+h2 {
+  margin: auto;
+  flex-grow: 1;
+  color: hsl(345deg 100% 47%);
+}
+
+.container {
+  /* padding: 2rem; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.board {
+  margin: 2rem;
+}
+
+.row {
+  display: flex;
+  position: relative;
+}
+
+.box {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.3rem;
+  border-radius: 5px;
+  font-size: 2rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ans {
+  font-size: 2rem;
+  align-items: center;
+  display: flex;
+  margin: 0.3rem;
+  position: absolute;
+  right: -60px;
+  top: 12px;
+}
+
+.outline {
+  background-color: transparent;
+  border: 1px solid gray;
+}
+
+.hide {
+  display: none;
+}
+
+.btn-pushable {
+  margin: 0.3rem;
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(255, 6, 6, 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.btn-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(
+    to left,
+    hsl(340deg 100% 16%) 0%,
+    hsl(340deg 100% 32%) 8%,
+    hsl(340deg 100% 32%) 92%,
+    hsl(340deg 100% 16%) 100%
+  );
+}
+
+.btn-front {
+  width: 1rem;
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+@media (min-width: 768px) {
+  .btn-front {
+    font-size: 1.25rem;
+  }
+}
+
+.btn-pushable:hover {
+  filter: brightness(110%);
+}
+
+.btn-pushable:hover .btn-front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.btn-pushable:active .btn-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.btn-pushable:hover .btn-shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.btn-pushable:active .btn-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.btn-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.text {
+  font-size: 16pt;
+}
