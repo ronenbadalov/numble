@@ -22,6 +22,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3rem;
 }
 
 .board {
@@ -51,7 +52,7 @@ h2 {
   display: flex;
   margin: 0.3rem;
   position: absolute;
-  right: -60px;
+  right: -111px;
   top: 12px;
 }
 
@@ -157,4 +158,109 @@ h2 {
 
 .text {
   font-size: 16pt;
+}
+
+.shake {
+  animation: tilt-shaking 0.25s infinite;
+  border-color: red;
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(0eg);
+  }
+  75% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  text-align: center;
+  padding: 0.3rem;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.right {
+  background-color: #019267;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+.right-edge {
+  background: linear-gradient(
+    to left,
+    hsl(162deg 99% 16%) 0%,
+    hsl(162deg 100% 32%) 8%,
+    hsl(162deg 100% 32%) 92%,
+    hsl(162deg 100% 16%) 100%
+  ) !important;
+}
+
+.right-shadow {
+  background: #01926796;
+}
+.partly {
+  background-color: #f0a500;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+.partly-edge {
+  background: linear-gradient(
+    to left,
+    hsl(41deg 99% 16%) 0%,
+    hsl(41deg 100% 47%) 8%,
+    hsl(41deg 100% 47%) 92%,
+    hsl(41deg 100% 16%) 100%
+  ) !important;
+}
+
+.partly-shadow {
+  background: #f0a4009b;
+}
+
+.wrong {
+  background-color: #1b1a17;
+  color: white;
+  transition: background-color 1s, color 1s;
+}
+
+.wrong-edge {
+  background: linear-gradient(
+    to left,
+    hsl(45deg 8% 5%) 0%,
+    hsl(45deg 8% 20%) 8%,
+    hsl(45deg 8% 20%) 92%,
+    hsl(45deg 8% 5%) 100%
+  ) !important;
+}
+
+.wrong-shadow {
+  background: #1b1a178f;
 }
