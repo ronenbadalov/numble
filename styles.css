@@ -10,7 +10,7 @@ nav {
   box-shadow: 5px 1px 22px -3px rgba(0, 0, 0, 0.49);
 }
 
-h2 {
+.logo {
   margin: auto;
   flex-grow: 1;
   color: hsl(345deg 100% 47%);
@@ -49,7 +49,10 @@ h2 {
 .ans {
   font-size: 2rem;
   align-items: center;
+  opacity: 1;
+  visibility: visible;
   display: flex;
+  transition: visibility 0s, opacity 1s linear;
   margin: 0.3rem;
   position: absolute;
   right: -111px;
@@ -62,7 +65,11 @@ h2 {
 }
 
 .hide {
-  display: none;
+  /* display: none;
+  transition: opacity 1s ease-out;
+  opacity: 0; */
+  visibility: hidden;
+  opacity: 0;
 }
 
 .btn-pushable {
@@ -263,4 +270,199 @@ h2 {
 
 .wrong-shadow {
   background: #1b1a178f;
+}
+
+.ngBtn-hover.color {
+  /* background-image: linear-gradient(
+    to right,
+    #ed6ea0,
+    #ec8c69,
+    #f7186a,
+    #fbb03b
+  ); */
+  font-size: 19pt;
+  background-image: linear-gradient(
+    to right,
+    #fd297e,
+    #f86733,
+    #f7186a,
+    #fbb03b
+  );
+  box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+}
+
+.ngBtn-hover {
+  height: 55px;
+  width: 200px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  transition: all 0.5s ease-in-out;
+}
+
+.ngBtn-hover:hover {
+  background-position: 100% 0;
+  transition: all 0.5s ease-in-out;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+
+.openModalIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  font-size: 17pt;
+  color: #f0003c;
+  border-radius: 50%;
+  margin-right: 1.5rem;
+  cursor: pointer;
+}
+
+.openModalIcon:hover {
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+.modal-close {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+
+.modal-header {
+  padding: 2px 16px;
+}
+
+.modal-body {
+  padding: 2px 16px;
+  margin-bottom: 2rem;
+}
+
+.modal-title {
+  text-align: center;
+}
+
+.modal-statistics {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 6rem;
+  height: 6rem;
+}
+
+.card-number {
+  font-size: 19pt;
+  font-weight: bold;
+}
+
+.modal p {
+  margin: 0;
+}
+
+.text-not-found {
+  font-size: 14pt;
+  text-align: center;
+}
+
+.margin-auto {
+  margin: auto;
 }

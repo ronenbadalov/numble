@@ -9,6 +9,12 @@
     <link rel="icon" href="./assets/calclogo.png" />
     <script src="./index.js"></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1da10781ac.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <nav>
@@ -20,101 +26,54 @@
         loop
         autoplay
       ></lottie-player>
-      <h2>Numble</h2>
+      <h2 class="logo">Numble</h2>
+      <div class="links">
+        <div class="openModalIcon">
+          <i class="fa-solid fa-chart-simple"></i>
+        </div>
+        <a href="https://github.com/ronenbadalov/numble" target="_blank">
+          <lottie-player
+            src="./lotties/github.json"
+            background="transparent"
+            speed="2"
+            style="width: 40px; height: 40px"
+            loop
+            autoplay
+          ></lottie-player>
+        </a>
+      </div>
     </nav>
     <div class="container">
       <div class="board"></div>
-      <div class="keypad">
-        <div class="row">
-          <button class="btn-pushable" role="button" id="kp1" value="1">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">1</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp2" value="2">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">2</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp3" value="3">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">3</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp+" value="+">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">+</span>
-          </button>
+      <div class="keypad"></div>
+    </div>
+    <div class="footer">©Ronen Badalov 2022</div>
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="modal-close">&times;</span>
+          <h2 class="modal-title">Your Statistics</h2>
         </div>
-        <div class="row">
-          <button class="btn-pushable" role="button" id="kp4" value="4">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">4</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp5" value="5">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">5</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp6" value="6">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">6</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp-" value="-">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">-</span>
-          </button>
-        </div>
-        <div class="row">
-          <button class="btn-pushable" role="button" id="kp7" value="7">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">7</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp8" value="8">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">8</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp9" value="9">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">9</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp*" value="×">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">×</span>
-          </button>
-        </div>
-        <div class="row">
-          <button class="btn-pushable" role="button" id="kpclear" value="clear">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">C</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp0" value="0">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">0</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp=" value="=">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">=</span>
-          </button>
-          <button class="btn-pushable" role="button" id="kp/" value="÷">
-            <span class="btn-shadow"></span>
-            <span class="btn-edge"></span>
-            <span class="btn-front text">÷</span>
-          </button>
+        <div class="modal-body">
+          <div class="modal-statistics">
+            <div class="card modal-played">
+              <p class="card-number"></p>
+              <p class="card-text">Played</p>
+            </div>
+            <div class="card modal-won">
+              <p class="card-number"></p>
+              <p class="card-text">Won</p>
+            </div>
+            <div class="card modal-percent">
+              <p class="card-number"></p>
+              <p class="card-text">Win %</p>
+            </div>
+          </div>
+          <div class="modal-chart">
+            <div class="chart"></div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="footer">©Ronen Badalov 2022</div>
   </body>
 </html>
